@@ -1,0 +1,40 @@
+<div>
+<app-employee-count [all]="getEmployeeCount()" [female]="getFemaleEmployeeCount()" [male]="getMaleEmployeeCount()"
+(selectValueEvent)="displayValue($event)"></app-employee-count>
+  </div>
+  Selected Filter is: {{ gender }}
+<div *ngIf="employees.length > 0">
+  List of Employees 
+ <table>
+   <thead><tr>
+     <th>EmpID</th>
+     <th>EmpName</th>
+     <th>Gender</th>
+     <th>Salary</th>
+    </tr>
+   </thead>
+   <tbody>
+     <tr *ngFor='let emp of employees'>
+       <td>
+         {{ emp.EmpId}}
+       </td>
+       <td>
+          {{ emp.Name}}
+        </td>
+        <td>
+            {{ emp.Gender}}
+          </td>
+          <td>
+              {{ emp.Salary}}
+            </td>
+     </tr>
+   </tbody>
+   <tbody>
+
+   </tbody>
+</table>
+ Thank You :  {{ reversestr }}
+</div>
+<div *ngIf="employees.length == 0">
+  Employees not found.
+</div>
